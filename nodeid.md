@@ -152,7 +152,7 @@ OpcUa_NodeId;
 
 | 名称 | 类型 | 描述 |
 | :--- | :--- | :--- |
-| **`namespaceIndex`** | `UInt16` | 命名空间索引，标识名称的权威性。 |
+| **`namespaceIndex`** | `UInt16` | OPC UA 服务器中使用的命名空间 URI 的索引 |
 | **`identifierType`** | `enum` | 标识符的格式和数据类型（Numeric, String, Guid, Opaque）。 |
 | **`identifier`** | `*` (Union) | 节点的实际标识值，类型取决于 `identifierType`。 |
 
@@ -176,6 +176,14 @@ OpcUa_NodeId;
 -----
 
 ## 1\. Namespace Index（命名空间索引）
+翻译：
+命名空间是一个 URI，用于标识负责分配 NodeId 标识符元素的命名机构。命名机构包括本地服务器、底层系统、标准组织和联盟。大多数节点预计会使用服务器或底层系统的 URI。
+
+使用命名空间 URI 允许连接到同一底层系统的多个 OPC UA 服务器使用相同的标识符来标识同一对象。这使得连接到这些服务器的客户端能够识别它们共有的对象。命名空间 URI 区分大小写。
+
+在 OPC UA 服务中，命名空间 URI 由数值标识，以便更高效地传输和处理数据（例如，查找表）。用于标识命名空间的数值对应于 NamespaceArray 中的索引。NamespaceArray 是地址空间中服务器对象的一部分。
+
+OPC UA 命名空间的 URI 为“http://opcfoundation.org/UA/”。它在命名空间表中的对应索引为 0。
 
 命名空间机制是 OPC UA 实现 **可扩展性** 和 **名称权威性** 的基础。
 
@@ -220,6 +228,23 @@ OpcUa_NodeId;
 | `OPAQUE` | 长度为 0 的 ByteString |
 
 **注意：** 地址空间中的任何节点都 **不能** 拥有一个空 NodeId。
+
+
+将变量值同步写入 OPC UA 服务器。
+
+参数
+
+| | | |
+
+| [进、出] | serviceSettings 服务设置 | 一般服务设置如超时。有关更多详细信息，请参阅[ServiceSettings](http://172.20.20.233:8009/html/classUaClientSdk_1_1ServiceSettings.html)。 |
+| [进] | nodesToWrite待写节点 | 由 [OpcUa_WriteValue](http://172.20.20.233:8009/html/structOpcUa__WriteValue.html) 结构数组标识的节点、属性和要写入的值的列表  
+WriteValue 包括
+<br><br>-   NodeId：要写入的节点的NodeId<br>-   
+AttributeId：要写入的属性的 ID，例如 OpcUa_Attributes_Value<br>-   IndexRange：写入数组或矩阵值子集的选项<br>-   
+Value：要写入的值  <br>      <br>    
+IndexRange 参数用于选择数组的单个元素，或基于称为 NumericRange 的字符串语法的数组的单个索引范围。第一个元素由索引 0（零）标识。  <br>    使用单个整数选择单个元素，例如“6”。单个范围由用冒号（':'）字符分隔的两个整数表示，例如“5:7”。  <br>    多维数组可以通过指定由“,”分隔的每个维度的范围来索引。例如，可以选择 4x4 矩阵中的 2x2 块，范围为“1:2,0:1”。可以通过指定单个数字而不是范围来选择多维数组中的单个元素。例如，“1,1”指定选择二维数组中的[1,1]元素。  <br>    Value 参数中数组的大小应与 IndexRange 指定的大小相匹配。  <br>      <br>    The following BNF describes the syntax  <br>    以下 BNF 描述了语法 <numeric-range> ::= <dimension> [',' <dimension>] |
+| [出去] | results结果  | 写入结果列表 |
+| [出去] |diagnosticInfos   诊断信息 | 诊断信息列表  <br>诊断信息中索引的字符串表通过 serviceSettings in/out 参数提供。此参数中的字符串表始终为空，因为它已包含在 serviceSettings 中。 |
 
 -----
 

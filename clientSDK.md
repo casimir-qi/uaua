@@ -12,6 +12,14 @@
 
 客户端应用程序在开始使用 OPC UA 功能之前，必须初始化 SDK 的底层组件和 XML 解析器。这些操作通常在程序入口点 (`main` 函数) 的开始和结束时调用。
 
+```C++
+// 需要 Libxml2 库支持
+#if SUPPORT_XML_PARSER
+    // Libxml2 must be initialized in the main thread before any calls to its api
+    UaXmlDocument::initParser();
+#endif
+```
+
 ### A. XML 解析器管理
 
 | 函数 | 类别 | 描述 |
