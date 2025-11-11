@@ -161,7 +161,7 @@ UA 堆栈结构 OpcUa_DataValue 的包装类。
 
 
 
-## 文档译文：
+## read文档译文：
 从 OPC UA 服务器同步读取属性值。
 
 读取服务用于读取一个或多个节点的一个或多个属性。它还允许读取数组值的子集或单个元素，并定义要返回的值的有效期限，以减少设备读取的需要。与大多数其他服务一样，读取针对批量读取操作进行了优化，而不是针对读取单个属性值进行了优化。通常所有节点属性都是可读的。对于值属性，读取权限由变量的 AccessLevel 和 UserAccessLevel 属性指示。
@@ -326,9 +326,6 @@ UA 堆栈结构OpcUa_WriteValue的数组类。
 ### OpcUa_WriteValue
 定义为 Write 服务的 nodesToWrite 参数类型的结构。
 
-UaStatusCodeArray   results;
-UaDiagnosticInfos   diagnosticInfos;
-
 ### OpcUa_WriteValue::AttributeId
 属性的 ID。
 这应是有效的属性 ID。
@@ -345,6 +342,17 @@ UaDiagnosticInfos   diagnosticInfos;
 如果指定了 SourceTimestamp 或 ServerTimestamp，则服务器应使用这些值。如果服务器不支持写入时间戳，则返回 Bad_WriteNotSupported 错误。
 如果写入值的数据类型与属性的 DataType 不是同一类型或子类型，则服务器应返回 Bad_TypeMismatch 错误。基于数据类型层次结构，服务器应接受属性数据类型的子类型。对于 value 属性，DataType 是通过 DataType 属性定义的。 ByteString 在结构上与 Byte 的一维数组相同。如果需要字节数组，服务器应接受字节字符串。
 如果服务器不支持写入传递的数据编码，则返回 Bad_DataEncodingUnsupported 错误。
+
+### UaStatusCodeArray   results;
+详细说明
+UA 堆栈结构OpcUa_StatusCode的数组类。
+此类封装本机OpcUa_StatusCode结构的数组，并为你处理内存分配和清理。
+也可以看看
+UaStatusCode 以获取有关封装结构的信息。
+
+### UaDiagnosticInfos   diagnosticInfos;
+
+
 
 好的，根据您提供的 UaStack 客户端写入（`write`）变量的示例代码，我将为您撰写一份清晰的文档，总结 OPC UA 客户端如何使用 `UaSession::write()` 函数执行同步数据写入操作。
 
