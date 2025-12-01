@@ -49,3 +49,51 @@ mkdir -p /usr/xxb/xxa/ && echo -e "#!/bin/bash\nbash command" > /usr/xxb/xxa/too
   * `chmod +x ...`：赋予文件所有者、群组和其他用户执行 (`x`) 权限。
 
 您希望我对这个命令的某个部分进行更详细的解释吗？
+
+# 将特定窗口置顶
+指令：wmctrl
+
+```bash
+#!/bin/bash
+
+TARGET_TITLE_PART="exec_file"
+
+COMP_PROGRAM_COMMAND="gedit"  # 示例：使用 gedit 作为 exec_file
+
+if ! command -v wmctrl &> /dev/null
+then
+    echo "错误：'wmctrl' 工具未安装。请先安装它 (e.g., sudo apt install wmctrl)。"
+    exit 1
+fi
+
+# 1. 使用 wmctrl 列出所有窗口，并查找包含目标标题的窗口 ID
+WINDOW_ID=$(wmctrl -l -x | grep -i "${TARGET_TITLE_PART}" | awk '{print $1}' | head -n 1)
+
+if [ -n "$WINDOW_ID" ]; then
+    echo "找到程序 '${TARGET_TITLE_PART}', 窗口 ID: ${WINDOW_ID}"
+
+    wmctrl -a "$TARGET_TITLE_PART" & disown
+
+    echo "已置顶/激活窗口: ${WINDOW_ID} $TARGET_TITLE_PART" 
+
+else
+    # 未找到窗口
+
+    echo "未找到程序 '${TARGET_TITLE_PART}'，正在启动..."
+
+    ./$TARGET_TITLE_PART & disown
+
+
+    sleep 2
+
+    NEW_WINDOW_ID=$(wmctrl -l -x | grep -i "${TARGET_TITLE_PART}" | awk '{print $1}' | head -n 1)
+    echo " new window id ${NEW_WINDOW_ID}"
+
+    if [ -n "$NEW_WINDOW_ID" ]; then
+        wmctrl -a "$TARGET_TITLE_PART" & disown
+        echo "已激活新启动的窗口: ${NEW_WINDOW_ID}"
+    fi
+fi
+
+exit 0
+```

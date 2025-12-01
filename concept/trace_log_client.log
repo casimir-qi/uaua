@@ -1,0 +1,86 @@
+02:34:58.685Z|5|3F20C740* Ctor UaSession
+02:34:58.709Z|6|3F20C740* --> UaSession::connect URL=opc.tcp://localhost:48010 [Session=1]
+02:34:58.709Z|6|3F20C740* --> UaSessionPrivate::initSession
+02:34:58.709Z|7|3F20C740* UaSession::connect - using endpoint opc.tcp://localhost:48010
+02:34:58.709Z|7|3F20C740*     SessionConnectInfo
+02:34:58.709Z|7|3F20C740*         ApplicationUri: urn:debian:UnifiedAutomation::Client_Cpp_SDK
+02:34:58.709Z|7|3F20C740*         ApplicationName: Client_Cpp_SDK@debian
+02:34:58.710Z|7|3F20C740*         ProductUri: urn:UnifiedAutomation::Client_Cpp_SDK
+02:34:58.710Z|7|3F20C740*         SessionName: Client_Cpp_SDK@debian
+02:34:58.711Z|7|3F20C740*         SessionTimeout: 1200000.000000
+02:34:58.711Z|7|3F20C740*         SecureChannelLifetime: 3600000
+02:34:58.711Z|7|3F20C740*         ConnectTimeout: 5000
+02:34:58.711Z|7|3F20C740*         PublishTimeout: 60000
+02:34:58.711Z|7|3F20C740*         WatchdogTime: 5000
+02:34:58.711Z|7|3F20C740*         WatchdogTimeout: 5000
+02:34:58.711Z|7|3F20C740*         AutomaticReconnect: true
+02:34:58.711Z|7|3F20C740*         RetryInitialConnect: false
+02:34:58.711Z|7|3F20C740*         MaxOperationsPerServiceCall: 0
+02:34:58.713Z|7|3F20C740*         AuditEntryId: 
+02:34:58.715Z|7|3F20C740*         ReturnDiagnostics: 1023
+02:34:58.715Z|7|3F20C740*         TypeDictionaryMode: FirstUse
+02:34:58.715Z|7|3F20C740*     SessionSecurityInfo
+02:34:58.715Z|7|3F20C740*         DisableErrorCertificateIssuerRevocationUnknown: false
+02:34:58.715Z|7|3F20C740*         DisableErrorCertificateIssuerTimeInvalid: false
+02:34:58.715Z|7|3F20C740*         DisableErrorCertificateRevocationUnknown: false
+02:34:58.715Z|7|3F20C740*         DisableErrorCertificateTimeInvalid: false
+02:34:58.715Z|7|3F20C740*         MessageSecurityMode: None
+02:34:58.715Z|7|3F20C740*         SecurityPolicy: http://opcfoundation.org/UA/SecurityPolicy#None
+02:34:58.715Z|6|3F20C740* <-- UaSessionPrivate::initSession [ret=0x0]
+02:34:58.715Z|6|3F20C740* --> UaSessionPrivate::connectChannel
+02:34:58.715Z|4|3F20C740* CALL OpcUa_Channel_Create
+02:34:58.715Z|4|3F20C740* DONE OpcUa_Channel_Create [ret=0x0]
+02:34:58.715Z|4|3F20C740* CALL OpcUa_Channel_Connect
+02:34:58.715Z|6|3F20C740* [uastack] OpcUa_AsyncCallState_Create: 0x5576a4c29f40
+02:34:58.715Z|6|3F20C740* [uastack] OpcUa_Channel_Connect: async state 0x5576a4c29f40
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_Channel_BeginConnect: Channel 0x5576a4c2c850, URL opc.tcp://localhost:48010
+02:34:58.716Z|7|3F20C740* [uastack] OpcUa_P_SocketManager_Create: SocketManager 0x5576a4c90f50 has signal receive raw socket 5.
+02:34:58.716Z|4|3F20C740* [uastack] OpcUa_TcpConnection_Create: Connection 0x5576a4c46de0 (TcpConnection 0x5576a4c92b70) using SocketManager 0x5576a4c90f50.
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_SecureConnection_Connect: sync connect for connection 0x5576a4c46ea0
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: Parsing "opc.tcp://localhost:48010".
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: Testing for IPv4 address or hostname.
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: Hostname detected.
+02:34:58.716Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: Trying to resolve host "localhost" port "48010" to address family 0.
+02:34:58.719Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: 0: Resolved to IPv4 address family.
+02:34:58.719Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: 0: Numeric representation of resolved address is 127.0.0.1.
+02:34:58.719Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: 1: Resolved to IPv6 address family.
+02:34:58.719Z|6|3F20C740* [uastack] OpcUa_P_ParseUrl: 1: Numeric representation of resolved address is ::1.
+02:34:58.719Z|7|3F20C740* [uastack] OpcUa_P_SocketManager_CreateClient: new client socket 0x5576a4c2ad00 (raw socket 6) at socket manager 0x5576a4c90f50
+02:34:58.719Z|7|3F20C740* [uastack] OpcUa_P_SocketManager_InterruptLoop: Signal sent to raw socket 5.
+02:34:58.719Z|6|3F20C740* [uastack] OpcUa_AsyncCallState_WaitForCompletion: 0x5576a4c29f40 begin
+02:34:58.719Z|4|3ED066C0* [uastack] NetworkThread: Message loop of SocketManager 0x5576a4c90f50 started...
+02:34:58.719Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: ENTER
+02:34:58.719Z|7|3ED066C0* [uastack] OpcUa_P_RawSocketSet_Fill: register socket 6 for event 0x40
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: 1. Checking for write and connect (0x42)
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_P_RawSocketSet_HandleEvents: successful connect (0) for socket 0x5576a4c2ad00
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_Socket_HandleEvent: Socket 0x5576a4c2ad00 and event 40
+02:34:58.720Z|6|3ED066C0* [uastack]  * OpcUa_TcpConnection_SocketCallback: Socket(0x5576a4c2ad00), Port(51116), Data(0x5576a4c46de0), Event(OPCUA_SOCKET_CONNECT_EVENT)
+02:34:58.720Z|4|3ED066C0* [uastack] OpcUa_TcpConnection_ConnectEventHandler: Transport connection 0x5576a4c46de0 established to 127.0.0.1:48010 on socket 0x5576a4c2ad00!
+02:34:58.720Z|6|3ED066C0* [uastack] Sending:    PV:0 RB:65536 SB:65536 MMS:16777216 MCC:256
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Flush no. 1 with 256 max flushes and final flag 1!
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Messagelength is 57! Last Call!
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Buffer emptied!
+02:34:58.720Z|6|3ED066C0* [uastack]  * OpcUa_TcpConnection_SocketCallback: Event Handler returned.
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: 2. Checking for read (0x01)
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: Finished handling of socket events.
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_RawSocketSet_Fill: register socket 6 for event 0x1
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: 1. Checking for write and connect (0x42)
+02:34:58.720Z|7|3ED066C0* [uastack] OpcUa_P_SocketManager_ServeLoopInternal: 2. Checking for read (0x01)
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_Socket_HandleEvent: Socket 0x5576a4c2ad00 and event 1
+02:34:58.720Z|6|3ED066C0* [uastack]  * OpcUa_TcpConnection_SocketCallback: Socket(0x5576a4c2ad00), Port(51116), Data(0x5576a4c46de0), Event(OPCUA_SOCKET_READ_EVENT)
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_TcpStream_DataReady: Read 8 bytes.
+02:34:58.720Z|6|3ED066C0* [uastack] OpcUa_TcpStream_DataReady: Read 20 bytes.
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_TcpStream_DataReady: total 28 bytes (20 last) of 20 (w/o header) received.
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_TcpConnection_ReadEventHandler: MessageType ACKNOWLEDGE
+02:34:58.721Z|6|3ED066C0* [uastack] Received:   PV:0 RB:65536 SB:65536 MMS:16777216 MCC:256
+02:34:58.721Z|6|3ED066C0* [uastack] Set:        PV:0 RB:65536 SB:65536 MMS:16777216 MCC:256
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_SecureConnection_OnNotify: SecureConnection 0x5576a4c46ea0 (state 1) received event 1 with status 0x00000000!
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_SecureConnection_OnNotify: Connect event: Trying to open secure channel.
+02:34:58.721Z|6|3ED066C0* [uastack] BeginOpenSecureChannel: Policy http://opcfoundation.org/UA/SecurityPolicy#None; Mode 1!
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_SecureConnection_AddPendingRequest: Added request with Id 1 and no timeout
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_SecureStream_PrepareForSending: SecurityMode 1, MessageType 2, SN 1
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Flush no. 1 with 256 max flushes and final flag 1!
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Messagelength is 133! Last Call!
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_TcpStream_Flush: Buffer emptied!
+02:34:58.721Z|6|3ED066C0* [uastack] OpcUa_SecureStream_Flush: Flush number 1 successful! (Last)
+02:34:58.721Z|6|3ED066C0* [uastack]  * OpcUa_TcpConnection_SocketCallback: Event Handler returned.

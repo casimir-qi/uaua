@@ -1,0 +1,115 @@
+请分析服务端日志分析一下内容
+06:31:08.652Z|4|BF76E740* ==> UaCoreServerApplication::start
+06:31:08.653Z|6|BF76E740* --> PubSubManager::initializeLibrary
+06:31:08.653Z|6|BF76E740* <-- PubSubManager::initializeLibrary
+06:31:08.653Z|6|BF76E740* --> ServerConfigXml::loadConfiguration
+06:31:08.656Z|2|BF76E740* Warning: UaEndpointXml::setXmlConfig - SecurityPolicyUri: http://opcfoundation.org/UA/SecurityPolicy#None is enabled. This allows clients to connect without certificate check.
+06:31:08.656Z|6|BF76E740* <-- ServerConfigXml::loadConfiguration [ret=0x0]
+06:31:08.656Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.657Z|5|BF76E740* Ctor CoreModule
+06:31:08.657Z|4|BF76E740* ==> CoreModule::initialize
+06:31:08.657Z|3|BF76E740* Version information UA Server SDK:
+06:31:08.657Z|3|BF76E740*     1.8.7.644
+06:31:08.657Z|3|BF76E740*     Mar 19 2025 16:35:00
+06:31:08.657Z|3|BF76E740*     GNU C++ 12.2
+06:31:08.657Z|3|BF76E740* Version information UA Stack:
+06:31:08.657Z|3|BF76E740*     Version:1.5.11 377 / 4835e489f745bcc147f5043421a6378b45ec73bd
+06:31:08.657Z|3|BF76E740*     SourceTimestamp:2025-03-19 15:19:22
+06:31:08.657Z|3|BF76E740*     BuildTimestamp:Mar 19 2025 16:33:32
+06:31:08.658Z|3|BF76E740*     VendorName:Unified Automation GmbH
+06:31:08.658Z|3|BF76E740*     VendorInfo:
+06:31:08.658Z|3|BF76E740*     Compiler:GNU C++ 12.2
+06:31:08.658Z|3|BF76E740* Static configuration information UA Stack:
+06:31:08.658Z|3|BF76E740*     UseSafeFunction:0
+06:31:08.658Z|3|BF76E740*     Force32BitEnums:!0
+06:31:08.658Z|3|BF76E740*     Multithreaded:!0
+06:31:08.658Z|3|BF76E740*     Synchronized:!0
+06:31:08.658Z|3|BF76E740*     ThreadPoolSupported:!0
+06:31:08.658Z|3|BF76E740*     ThreadPoolDynamicSize:0
+06:31:08.658Z|3|BF76E740*     ThreadPoolReloopTime:500
+06:31:08.658Z|3|BF76E740*     TraceLength:200
+06:31:08.658Z|3|BF76E740*     SecurityTokenLifeTimeMin:300000
+06:31:08.658Z|3|BF76E740*     SecurityTokenLifeTimeMax:3600000
+06:31:08.658Z|3|BF76E740*     SecurityTokenRevisedLifeTimeMin:300000
+06:31:08.658Z|3|BF76E740*     SecurityTokenRevisedLifeTimeMax:3600000
+06:31:08.658Z|3|BF76E740*     SecureListenerWatchdogInterval:10000
+06:31:08.658Z|3|BF76E740*     SecureListenerInactiveChannelLifetime:1
+06:31:08.659Z|3|BF76E740*     SecureListenerAsyncOpenSecurechannel:!0
+06:31:08.659Z|3|BF76E740*     SecureConnectionTimeoutInterval:1000
+06:31:08.659Z|3|BF76E740*     MaxCertificateChainLength:24576
+06:31:08.659Z|3|BF76E740*     SocketBlockingWrite:0
+06:31:08.659Z|3|BF76E740*     TcpListenerMaxConnections:102
+06:31:08.659Z|3|BF76E740*     TcpListenerUseExtraSocket:!0
+06:31:08.659Z|3|BF76E740*     HttpsMaxReceiveMessageLength:(100*65536)
+06:31:08.659Z|3|BF76E740*     HttpsMaxReceiveHeaderLength:1024
+06:31:08.659Z|3|BF76E740*     HttpsMaxReceiveHeaderCount:20
+06:31:08.659Z|3|BF76E740*     HttpsMaxSendHeaderLength:1350
+06:31:08.659Z|3|BF76E740*     HttpsMaxSendMessageLength:(200*(1350 + 262144 + 3))
+06:31:08.659Z|3|BF76E740*     HttpsConnectionTimeoutInterval:1000
+06:31:08.659Z|3|BF76E740*     HttpsConnectionMaxPendingRequests:10
+06:31:08.659Z|3|BF76E740*     HttpsListenerMaxConnections:50
+06:31:08.659Z|3|BF76E740* Version information UA Stack Platform Layer:
+06:31:08.659Z|3|BF76E740*     PlatformName:Linux
+06:31:08.659Z|3|BF76E740*     SourceTimestamp:2025-03-19 15:19:22
+06:31:08.659Z|3|BF76E740*     BuildTimestamp:Mar 19 2025 16:33:32
+06:31:08.660Z|3|BF76E740*     VendorName:Unified Automation GmbH
+06:31:08.660Z|3|BF76E740*     VendorInfo:
+06:31:08.660Z|3|BF76E740*     Compiler:GNU C++ 12.2
+06:31:08.660Z|3|BF76E740*     OpenSSL 3.0.0 7 sep 2021
+06:31:08.660Z|3|BF76E740*     OpenSSL compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -O3 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG
+06:31:08.660Z|3|BF76E740*     OpenSSL built on: Thu Oct 23 06:14:32 2025 UTC
+06:31:08.660Z|3|BF76E740*     OpenSSL built for platform: linux-x86_64
+06:31:08.660Z|3|BF76E740*     OpenSSL built with OPENSSLDIR: "/usr/local/openssl3"
+06:31:08.660Z|3|BF76E740* Configuration information UA Stack Platform Layer:
+06:31:08.660Z|3|BF76E740*     PreferMonotonyOverResolution:!0
+06:31:08.660Z|3|BF76E740*     ThreadStackSize:(1024*1024)
+06:31:08.660Z|3|BF76E740*     UseReuseAddr:!0
+06:31:08.660Z|3|BF76E740*     SocketListsStatic:0
+06:31:08.660Z|3|BF76E740*     MaxSocketLists:60
+06:31:08.660Z|3|BF76E740*     MaxSocketsPerList:105
+06:31:08.660Z|3|BF76E740*     ServerPreferIPv6:!0
+06:31:08.660Z|3|BF76E740*     ClientPreferIPv6:0
+06:31:08.661Z|3|BF76E740*     SupportSSL:0
+06:31:08.661Z|3|BF76E740*     PreferLocalhost:!0
+06:31:08.661Z|3|BF76E740*     AcceptSelfSigned:0
+06:31:08.661Z|3|BF76E740*     UseRandScreen:OPCUA_P_OPENSSL_USE_RAND_SCREEN
+06:31:08.661Z|3|BF76E740*     UseRandSeed:0
+06:31:08.661Z|3|BF76E740*     SupportPolicyBasic128Rsa5:!0
+06:31:08.661Z|3|BF76E740*     SupportPolicyBasic256:!0
+06:31:08.661Z|3|BF76E740*     SupportPolicyBasic256Sha256:!0
+06:31:08.661Z|3|BF76E740*     SupportPolicyAes128Sha256RsaOaep:!0
+06:31:08.661Z|3|BF76E740*     SupportPolicyAes256Sha256RsaPss:!0
+06:31:08.661Z|3|BF76E740*     SupportPolicyNone:!0
+06:31:08.661Z|3|BF76E740*     UseOwnCertVerify:0
+06:31:08.661Z|3|BF76E740*     UseSslVerifyCallback:!0
+06:31:08.661Z|3|BF76E740*     SslAllowSelfsigned:0
+06:31:08.662Z|3|BF76E740*     NoOfTimers:200
+06:31:08.662Z|3|BF76E740*     SupportPki:!0
+06:31:08.662Z|3|BF76E740*     SupportSha2:!0
+06:31:08.662Z|5|BF76E740* Ctor NodeManagerUaNode NsUri=http://opcfoundation.org/UA/ HashTableSize=10007
+06:31:08.662Z|5|BF76E740* Ctor IOManagerUaNode ID=6
+06:31:08.662Z|5|BF76E740* Ctor CoreTransactions
+06:31:08.662Z|4|BF76E740* <== CoreModule::initialize [ret=0]
+06:31:08.662Z|5|BF76E740* Ctor UaModule
+06:31:08.662Z|4|BF76E740* --> UaModule::initialize
+06:31:08.662Z|5|BF76E740* Ctor UaServer
+06:31:08.662Z|4|BF76E740* <-- UaModule::initialize [ret=0]
+06:31:08.662Z|4|BF76E740* ==> CoreModule::getServerManager
+06:31:08.662Z|4|BF76E740* <== CoreModule::getServerManager
+06:31:08.668Z|4|BF76E740* ==> CoreModule::startUp
+06:31:08.668Z|6|BF76E740* --> ServerManager::startUp
+06:31:08.668Z|6|BF76E740* --> ServerConfigXml::loadConfiguration
+06:31:08.668Z|6|BF76E740* <-- ServerConfigXml::loadConfiguration - already loaded
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.668Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.669Z|3|BF76E740* UaDir::mkpath: Path already exists!
+06:31:08.672Z|5|BF76E740* Ctor NodeManagerUaNode NsUri=urn:debian:UnifiedAutomation:UaServerCpp HashTableSize=10007
+06:31:08.672Z|5|BF76E740* Ctor IOManagerUaNode ID=7
+06:31:08.672Z|6|BF76E740* --> NodeManagerRoot::afterStartUp
+06:31:08.672Z|6|BF76E740* --> IOManagerUaNode::startUpIO ID=6
+06:31:08.673Z|6|BF76E740* <-- IOManagerUaNode::startUpIO [ret=OpcUa_Good]
+06:31:08.722Z|6|BF76E740* --> EventManagerBase::registerEventType ST = NS0|Numeric|2041 NT = NS0|Numeric|2130
